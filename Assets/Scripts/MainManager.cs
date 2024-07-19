@@ -76,6 +76,7 @@ public class MainManager : MonoBehaviour
         if (BestScoreText != null)
         {
             BestScoreText.text = "Best Score :" + DataManager.Instance.GetName() + ": 0";
+            DataManager.Instance.SaveData(m_Points);
         }
         GameOverText.SetActive(true);
     }

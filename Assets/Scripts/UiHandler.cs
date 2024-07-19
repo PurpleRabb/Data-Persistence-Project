@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEditor.UI;
 using UnityEngine;
@@ -9,10 +10,12 @@ using UnityEngine.UI;
 public class UiHandler : MonoBehaviour
 {
     public InputField inputNameField;
+    public Text showBest;
     // Start is called before the first frame update
     void Start()
     {
-        
+        showBest.text = "Best Score:" + DataManager.Instance.GetName() + ":" + DataManager.Instance.GetBestScore();
+        Debug.Log(showBest.text);
     }
 
     // Update is called once per frame
