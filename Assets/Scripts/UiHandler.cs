@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UiHandler : MonoBehaviour
 {
+    public InputField inputNameField;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,12 @@ public class UiHandler : MonoBehaviour
 
     public void GameStart()
     {
+        if (inputNameField != null)
+        {
+            DataManager.Instance.SetName(inputNameField.text);
+            Debug.Log(inputNameField.text);
+        }
+        
         SceneManager.LoadScene(1);
     }
 
